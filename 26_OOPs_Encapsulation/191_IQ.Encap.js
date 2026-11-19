@@ -3,15 +3,15 @@ class TestCase {
     static #count = 0;
     constructor(name) {
         this.name = name;
-        TestCase.#count++;
+        TestCase.count++;
     }
     run(pass) {
        this.#status = pass ? "PASSED" : "FAILED";
     }
     getStatus() { return this.#status; }
-    static getCount() { return TestCase.#count; }
+    static getCount() { return TestCase.count; }
     static setCount(v) {
-        TestCase.#count = v;
+        TestCase.count = v;
     }
 }
 const tc = new TestCase("login");
